@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Simple Linear Regression</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Simple Linear Regression">
+  <meta name="author" content="WC Hoh">
+  <meta name="generator" content="slidify">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="Simple%20Linear%20Regression_files/default.css" media="all">
+  <link rel="stylesheet" href="Simple%20Linear%20Regression_files/phone.css" media="only screen and (max-device-width: 480px)">
+  <link rel="stylesheet" href="Simple%20Linear%20Regression_files/slidify.css">
+  <link rel="stylesheet" href="Simple%20Linear%20Regression_files/tomorrow.css">
+  <script src="Simple%20Linear%20Regression_files/slides.js" data-requiremodule="slides" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Simple%20Linear%20Regression_files/order.js" data-requiremodule="order" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Simple%20Linear%20Regression_files/slide_config.js" data-requiremodule="slide_config" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><script src="Simple%20Linear%20Regression_files/modernizr.js" data-requiremodule="modernizr.custom.45394" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><script src="Simple%20Linear%20Regression_files/hammer.js" data-requiremodule="hammer" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><script src="Simple%20Linear%20Regression_files/slide-controller.js" data-requiremodule="slide-controller" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><script src="Simple%20Linear%20Regression_files/slide-deck.js" data-requiremodule="slide-deck" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><!-- base href="file:///C:/Users/WingChee/Documents/DataProducts/linRegProj/index.html" --> <!-- This amazingness opens all links in a new tab. -->  <link rel="stylesheet" href="Simple%20Linear%20Regression_files/ribbons.css">
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="Simple%20Linear%20Regression_files/jquery-1.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" src="Simple%20Linear%20Regression_files/require-1.js">
+  </script>
+  
+  
+
+<link href="Simple%20Linear%20Regression_files/css.css" rel="stylesheet"></head>
+<body class="loaded" style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide data-total-slides="5" data-slide-num="1" class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Simple Linear Regression</h1>
+    <h2>Prediction of Diamond Prices using Linear Regression</h2>
+    <p>WC Hoh<br>Retired</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide data-total-slides="5" data-slide-num="2" class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Slide 2</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Simple Regression Model:
+ Defines relationship between a dependent variable, and
+ a single independent predictor variable.
+ The equation for this relationship:</p>
+
+<h3>y = a + bx</h3>
+
+<h4>y: dependent variable</h4>
+
+<h4>x: independent predictor variable</h4>
+
+<h4>a: intercept</h4>
+
+<h4>b: change in y given an increase in x</h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide data-total-slides="5" data-slide-num="3" class="class far-past" id="id" style="background:;">
+  <hgroup>
+    <h2>Slide 3</h2>
+  </hgroup>
+  <article data-timings="">
+    <h2>Diamond Dataset:</h2>
+
+<h4>48 observations of 2 variables: price and weight</h4>
+
+<h3>Using the following linear regression equation:</h3>
+
+<h3>fit &lt;- lm(price ~ carat, data=diamond)</h3>
+
+<h3>the relevant coefficients are:</h3>
+
+<pre><code class="actionscript">## Warning: <span class="package"><span class="keyword">package</span> '<span class="title">UsingR</span>' <span class="title">was</span> <span class="title">built</span> <span class="title">under</span> <span class="title">R</span> <span class="title">version</span> 3.2.5
+</span></code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## Loading required package: MASS</span>
+</code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## Loading required package: HistData</span>
+</code></pre>
+
+<pre><code class="actionscript">## Warning: <span class="package"><span class="keyword">package</span> '<span class="title">HistData</span>' <span class="title">was</span> <span class="title">built</span> <span class="title">under</span> <span class="title">R</span> <span class="title">version</span> 3.2.5
+</span></code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## Loading required package: Hmisc</span>
+</code></pre>
+
+<pre><code class="actionscript">## Warning: <span class="package"><span class="keyword">package</span> '<span class="title">Hmisc</span>' <span class="title">was</span> <span class="title">built</span> <span class="title">under</span> <span class="title">R</span> <span class="title">version</span> 3.2.5
+</span></code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## Loading required package: lattice</span>
+</code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## Loading required package: survival</span>
+</code></pre>
+
+<pre><code class="actionscript">## Warning: <span class="package"><span class="keyword">package</span> '<span class="title">survival</span>' <span class="title">was</span> <span class="title">built</span> <span class="title">under</span> <span class="title">R</span> <span class="title">version</span> 3.2.5
+</span></code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## Loading required package: Formula</span>
+</code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## Loading required package: ggplot2</span>
+</code></pre>
+
+<pre><code class="actionscript">## Warning: <span class="package"><span class="keyword">package</span> '<span class="title">ggplot2</span>' <span class="title">was</span> <span class="title">built</span> <span class="title">under</span> <span class="title">R</span> <span class="title">version</span> 3.2.5
+</span></code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## </span>
+<span class="preprocessor">## Attaching package: 'Hmisc'</span>
+</code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## The following objects are masked from 'package:base':</span>
+<span class="preprocessor">## </span>
+<span class="preprocessor">##     format.pval, round.POSIXt, trunc.POSIXt, units</span>
+</code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## </span>
+<span class="preprocessor">## Attaching package: 'UsingR'</span>
+</code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## The following object is masked from 'package:survival':</span>
+<span class="preprocessor">## </span>
+<span class="preprocessor">##     cancer</span>
+</code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## (Intercept)       carat </span>
+<span class="preprocessor">##   -259.6259   3721.0249</span>
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide data-total-slides="5" data-slide-num="4" class="class past" id="id" style="background:;">
+  <hgroup>
+    <h2>A Plot to show the linear relationship between the price and weight in carats</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="Simple%20Linear%20Regression_files/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide data-total-slides="5" data-slide-num="5" class="class#id current" id="slide-4" style="background:;">
+  <hgroup>
+    <h3>Prediction equation:</h3>
+  </hgroup>
+  <article data-timings="">
+    <h4>As an example, if weight=0.2 carats, the predicted price will be:</h4>
+
+<pre><code class="r">price = coef(fit)[<span class="number">1</span>] + coef(fit)[<span class="number">2</span>]*<span class="number">0.2</span>
+
+price <span class="comment"># In Singapore dollars</span>
+</code></pre>
+
+<pre><code class="vala"><span class="preprocessor">## (Intercept) </span>
+<span class="preprocessor">##    484.5791</span>
+</code></pre>
+
+<h4>The price of 0.2 carat diamond is estimated to be S$ 484.58</h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id="io2012-ptoc" style="display:none;">
+    <ul>
+      <li class="">
+      <a href="#" target="_self" rel="tooltip" data-slide="1" title="Slide 2">
+         1
+      </a>
+    </li>
+    <li class="">
+      <a href="#" target="_self" rel="tooltip" data-slide="2" title="Slide 3">
+         2
+      </a>
+    </li>
+    <li class="active">
+      <a href="#" target="_self" rel="tooltip" data-slide="3" title="A Plot to show the linear relationship between the price and weight in carats">
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel="tooltip" data-slide="4" title="Prediction equation:">
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+
+  
+  
+  
+  <script src="Simple%20Linear%20Regression_files/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </body><!-- Load Javascripts for Widgets --><!-- LOAD HIGHLIGHTER JS FILES --></html>

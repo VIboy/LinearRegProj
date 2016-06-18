@@ -3,12 +3,13 @@ title       : Simple Linear Regression
 subtitle    : Prediction of Diamond Prices using Linear Regression
 author      : WC Hoh
 job         : Retired
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
+knit        : slidify::html5slides
+output: html_document
 ---
 
 ## Slide 2
@@ -34,13 +35,83 @@ Simple Regression Model:
 ### the relevant coefficients are:
 
 ```
+## Warning: package 'UsingR' was built under R version 3.2.5
+```
+
+```
+## Loading required package: MASS
+```
+
+```
+## Loading required package: HistData
+```
+
+```
+## Warning: package 'HistData' was built under R version 3.2.5
+```
+
+```
+## Loading required package: Hmisc
+```
+
+```
+## Warning: package 'Hmisc' was built under R version 3.2.5
+```
+
+```
+## Loading required package: lattice
+```
+
+```
+## Loading required package: survival
+```
+
+```
+## Warning: package 'survival' was built under R version 3.2.5
+```
+
+```
+## Loading required package: Formula
+```
+
+```
+## Loading required package: ggplot2
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 3.2.5
+```
+
+```
+## 
+## Attaching package: 'Hmisc'
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     format.pval, round.POSIXt, trunc.POSIXt, units
+```
+
+```
+## 
+## Attaching package: 'UsingR'
+```
+
+```
+## The following object is masked from 'package:survival':
+## 
+##     cancer
+```
+
+```
 ## (Intercept)       carat 
 ##   -259.6259   3721.0249
 ```
 
 --- .class #id
 ## A Plot to show the linear relationship between the price and weight in carats
-![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png)
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 --- .class#id
 

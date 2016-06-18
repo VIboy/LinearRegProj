@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/190430/6073cffcb69d461d9038f76f3153756a
+bundleId: https://api.rpubs.com/api/v1/document/190430/6073cffcb69d461d9038f76f3153756a
+url: http://rpubs.com/VIboy/190430
+when: 1466249041.88124
